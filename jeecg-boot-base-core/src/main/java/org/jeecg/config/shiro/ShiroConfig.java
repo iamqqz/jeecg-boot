@@ -147,7 +147,7 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/jmreport/**", "anon");
         filterChainDefinitionMap.put("/**/*.js.map", "anon");
         filterChainDefinitionMap.put("/**/*.css.map", "anon");
-        
+
         //拖拽仪表盘设计器排除
         filterChainDefinitionMap.put("/drag/view", "anon");
         filterChainDefinitionMap.put("/drag/page/queryById", "anon");
@@ -176,6 +176,9 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/error", "anon");
         // 企业微信证书排除
         filterChainDefinitionMap.put("/WW_verify*", "anon");
+
+        // 莫何demo hello
+        filterChainDefinitionMap.put("/demo/mohe/hello", "anon");
 
 //        // 通过注解免登录url
 //        List<String> ignoreAuthUrlList = collectIgnoreAuthUrl(ctx);
@@ -304,7 +307,7 @@ public class ShiroConfig {
 
             return sentinelManager;
         }
-        
+
         // redis 单机支持，在集群为空，或者集群无机器时候使用 add by jzyadmin@163.com
         if (lettuceConnectionFactory.getClusterConfiguration() == null || lettuceConnectionFactory.getClusterConfiguration().getClusterNodes().isEmpty()) {
             RedisManager redisManager = new RedisManager();
